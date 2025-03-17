@@ -1,0 +1,36 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "preLaunchTask": "${defaultBuildTask}",
+      "type": "probe-rs-debug",
+      "request": "launch",
+      "name": "launch STM32F401CE",
+      "flashingConfig": {
+        "flashingEnabled": true
+      },
+      "chip": "STM32F401CE",
+      "wireProtocol": "Swd",
+      "coreConfigs": [
+        {
+          "programBinary": "target/thumbv7em-none-eabihf/debug/embassy-stm32f401-blinky",
+          "rttEnabled": true
+        }
+      ]
+    },
+    {
+      "type": "probe-rs-debug",
+      "request": "attach",
+      "name": "attach STM32F401CE",
+      "cwd": "${workspaceFolder}",
+      "chip": "STM32F401CE",
+      "wireProtocol": "Swd",
+      "coreConfigs": [
+        {
+          "programBinary": "target/thumbv7em-none-eabihf/debug/embassy-stm32f401-blinky",
+          "rttEnabled": true
+        }
+      ]
+    }
+  ]
+}

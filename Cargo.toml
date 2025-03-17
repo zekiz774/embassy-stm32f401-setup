@@ -1,0 +1,38 @@
+[package]
+name = "embassy-stm32f401-blinky"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+# Embassy HAL for STM32 (with features for our specific chip)
+embassy-stm32 = { version = "0.2.0", features = [
+  "stm32f401ce",     # or your STM32F401 variant feature
+  "time-driver-any", # use a millisecond timer (e.g., SysTick) as Embassy time source
+  "unstable-pac",    # enable if the PAC (Peripheral Access Crate) is unstable
+  "defmt",
+  "memory-x",        # defmt logging support and include default memory.x linker script
+] }
+
+# Embassy framework crates
+embassy-executor = { version = "0.7.0", features = [
+  "arch-cortex-m",
+  "executor-thread",
+  "defmt",
+] }
+embassy-time = { version = "0.4.0", features = ["defmt"] }
+embassy-sync = { version = "0.6.2", features = ["defmt"] }
+
+# Panic handler and logging
+defmt = "0.3"
+defmt-rtt = "0.4"
+panic-probe = { version = "0.3", features = ["print-defmt"] }
+
+# Cortex-M support crates
+cortex-m = { version = "0.7.6", features = [
+  "inline-asm",
+  "critical-section-single-core",
+] }
+cortex-m-rt = "0.7.3"
+
+[profile.release]
+debug = 2
