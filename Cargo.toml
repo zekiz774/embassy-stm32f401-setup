@@ -6,7 +6,7 @@ edition = "2021"
 [dependencies]
 # Embassy HAL for STM32 (with features for our specific chip)
 embassy-stm32 = { version = "0.2.0", features = [
-  "stm32f401ce",     # or your STM32F401 variant feature
+  "stm32f401cd",     # or your STM32F401 variant feature
   "time-driver-any", # use a millisecond timer (e.g., SysTick) as Embassy time source
   "unstable-pac",    # enable if the PAC (Peripheral Access Crate) is unstable
   "defmt",

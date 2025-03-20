@@ -5,11 +5,11 @@
       "preLaunchTask": "${defaultBuildTask}",
       "type": "probe-rs-debug",
       "request": "launch",
-      "name": "launch STM32F401CE",
+      "name": "launch STM32F401CD",
       "flashingConfig": {
         "flashingEnabled": true
       },
-      "chip": "STM32F401CE",
+      "chip": "STM32F401CD",
       "wireProtocol": "Swd",
       "coreConfigs": [
         {
@@ -21,9 +21,9 @@
     {
       "type": "probe-rs-debug",
       "request": "attach",
-      "name": "attach STM32F401CE",
+      "name": "attach STM32F401CD",
       "cwd": "${workspaceFolder}",
-      "chip": "STM32F401CE",
+      "chip": "STM32F401CD",
       "wireProtocol": "Swd",
       "coreConfigs": [
         {

@@ -1,7 +1,7 @@
 #![no_std]
 #![no_main]
 
-use defmt::{debug, println};
+use defmt::debug;
 use embassy_executor::Spawner;
 use embassy_stm32::{
     gpio::{AnyPin, Level, Output, Pin, Speed},
